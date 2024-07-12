@@ -9,14 +9,12 @@ import java.util.Date;
 
 @Entity
 @Table(name = "illegal_dump_report")
-@Setter
-@Getter
 public class IllegalDumpReport {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Long reporterId;
-    private Long addressId;
+    private String addressText;
     private String description;
 
     public enum Status {
@@ -30,5 +28,51 @@ public class IllegalDumpReport {
     @Temporal(TemporalType.TIMESTAMP)
     private Date reportDate;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getReporterId() {
+        return reporterId;
+    }
+
+    public void setReporterId(Long reporterId) {
+        this.reporterId = reporterId;
+    }
+
+    public String getAddressText() {
+        return addressText;
+    }
+
+    public String setAddressText(String addressText) {
+        return this.addressText = addressText;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Date getReportDate() {
+        return reportDate;
+    }
+
+    public void setReportDate(Date reportDate) {
+        this.reportDate = reportDate;
+    }
 }

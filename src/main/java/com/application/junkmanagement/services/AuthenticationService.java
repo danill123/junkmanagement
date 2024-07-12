@@ -33,9 +33,9 @@ public class AuthenticationService {
 
     public Users authentication(LoginUserDto loginUserDto) {
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginUserDto.getEmail(), loginUserDto.getPassword())
+                new UsernamePasswordAuthenticationToken(loginUserDto.getUsername(), loginUserDto.getPassword())
         );
 
-        return userRepository.findByEmail(loginUserDto.getEmail()).orElseThrow();
+        return userRepository.findByUsername(loginUserDto.getUsername()).orElseThrow();
     }
 }
