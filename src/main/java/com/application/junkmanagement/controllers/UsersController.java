@@ -16,12 +16,12 @@ public class UsersController {
     @Autowired
     private UserService userService;
 
-//    @GetMapping
-//    public ResponseEntity<String> index() {
-//        return ResponseEntity.ok("hello");
-//    }
     @GetMapping
-    public List<UserAddressDto> index() {
-        return userService.getUserAddress();
+    public String index() {
+        return "hello";
     }
+//    @GetMapping
+//    public List<UserAddressDto> index() {
+//        return userService.getUserAddress();
+//    }
 }
